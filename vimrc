@@ -38,12 +38,15 @@ set clipboard+=unnamed
 " キーマップ "
 """"""""""""""
 
+""Insert mode
 " jキーを二度押しでESCキー
 inoremap <silent> jj <Esc><Right>
 inoremap <silent> っｊ <Esc><Right>
+" インサートモードで新しい行を追加し移動
+inoremap <silent> OO <Esc>O
+inoremap <silent> Oo <Esc>o
 
-" ノーマルモードに移行するときに
-
+""Nomal mode
 " <Leader>に<Space>を使用
 let g:mapleader = "\<Space>"
 
@@ -63,6 +66,9 @@ nnoremap s "_s
 
 " ファイル保存 <Leader>+"w"
 nnoremap <Leader>w :w<CR>
+
+" NERDTree表示 <Leader>+"t"
+nnoremap <Leader>t :NERDTreeToggle<CR>
 
 " ハイライトを消す(トグル) <Esc>*2
 nnoremap <Esc><Esc> :set<Space>hlsearch!<CR>
