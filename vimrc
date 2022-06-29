@@ -20,13 +20,6 @@ set expandtab
 " インデント自動調整
 set smartindent
 
-" かっこの自動補完
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-
 " コマンドライン補完
 set wildmenu
 
@@ -56,9 +49,11 @@ set belloff=all
 " jキーを二度押しでESCキー
 inoremap <silent> jj <Esc><Right>
 inoremap <silent> っｊ <Esc><Right>
+
 " インサートモードで新しい行を追加し移動
 inoremap <silent> OO <Esc>O
 inoremap <silent> Oo <Esc>o
+
 
 ""Nomal mode
 " <Leader>に<Space>を使用
@@ -101,32 +96,28 @@ if &compatible
 endif
 
 " Required:
-if has('linux')
-    set runtimepath+=/home/noda/.cache/dein/./repos/github.com/Shougo/dein.vim
-elseif has('mac')
-    set runtimepath+=/Users/nodaken/.cache/dein/./repos/github.com/Shougo/dein.vim
-endif
-
-" Declare the home directory path
-if has('linux')
-    let homedir='/home/noda/'
-elseif has('mac')
-    let homedir='/Users/nodaken/'
+if has('linux') || has('mac')
+    set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 endif
 
 " Required:
-call dein#begin(homedir.'.cache/dein/.')
+if has('linux') || has('mac')
+    call dein#begin('$HOME/.cache/dein')
+endif
 
 " Let dein manage dein
 " Required:
-call dein#add(homedir.'.cache/dein/./repos/github.com/Shougo/dein.vim')
+if has('linux') || has('mac')
+    call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+endif
 
 " Add or remove your plugins here like this:
 "call dein#add('Shougo/neosnippet.vim')
 "call dein#add('Shougo/neosnippet-snippets')
-call dein#add('preservim/nerdtree') 
 call dein#add('vim-jp/vimdoc-ja')
+call dein#add('preservim/nerdtree') 
 call dein#add('easymotion/vim-easymotion')
+call dein#add('machakann/vim-sandwich')
 
 " Required:
 call dein#end()
@@ -142,3 +133,4 @@ endif
 
 "End dein Scripts-------------------------
 
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
