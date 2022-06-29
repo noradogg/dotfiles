@@ -20,18 +20,32 @@ set expandtab
 " インデント自動調整
 set smartindent
 
+" かっこの自動補完
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+
 " コマンドライン補完
 set wildmenu
 
 "カーソルを行末の一つ先まで移動可能にする
-set virtualedit=onemore
+"set virtualedit=onemore
 
-" Beep音を消す
-set belloff=all
+" 検索のときのあれこれ
+set ignorecase
+set smartcase
+
+" grep関係
+set grepprg=internal
+au QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 " クリップボードを使えるように
 set clipboard+=unnamed
 
+" Beep音を消す
+set belloff=all
 
 
 """"""""""""""
