@@ -2,15 +2,15 @@
 " set "
 """""""
 
-" 行番号を表示
+" " 行番号を表示
 set number
-" 色づけ
+" " 色づけ
 syntax enable
-" カーソルライン
+" " カーソルライン
 set cursorline
-" タイトルをウィンドウ枠に表示
+" " タイトルをウィンドウ枠に表示
 set title
-" ステータスライン (下から2行目表示)
+" " ステータスライン (下から2行目表示)
 set laststatus=2
 
 " タブの幅
@@ -40,22 +40,35 @@ set clipboard+=unnamed
 " Beep音を消す
 set belloff=all
 
+" スクロール時に下までスクロールしすぎない(ztやzbを叩いた時)
+set scrolloff=5
+
 
 """"""""""""""
 " キーマップ "
 """"""""""""""
 
-""Insert mode
+" === Insert mode ===
 " jキーを二度押しでESCキー
 inoremap <silent> jj <Esc><Right>
 inoremap <silent> っｊ <Esc><Right>
-
+inoremap <silent> ff <Esc><Right>
 " インサートモードで新しい行を追加し移動
 inoremap <silent> OO <Esc>O
 inoremap <silent> Oo <Esc>o
 
 
-""Nomal mode
+" === Visual mode ===
+vnoremap <silent> ff <Esc><Right>
+"文頭・文末
+vnoremap H ^
+vnoremap L $
+
+
+" === Nomal mode ===
+"文頭・文末
+nnoremap H ^
+nnoremap L $
 " <Leader>に<Space>を使用
 let g:mapleader = "\<Space>"
 
@@ -118,6 +131,13 @@ call dein#add('vim-jp/vimdoc-ja')
 call dein#add('preservim/nerdtree') 
 call dein#add('easymotion/vim-easymotion')
 call dein#add('machakann/vim-sandwich')
+call dein#add('cohama/lexima.vim')
+call dein#add('tpope/vim-commentary')
+call dein#add('michaeljsmith/vim-indent-object')
+" カラーテーマ
+call dein#add('morhetz/gruvbox')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
 
 " Required:
 call dein#end()
@@ -133,4 +153,16 @@ endif
 
 "End dein Scripts-------------------------
 
+" === vim-sandwich ===
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+
+" === lexima.vim ===
+let g:lexima_enable_basic_rule = 1
+let g:lexima_enable_newline_rules = 1
+let g:lexima_enable_endwise_rules = 1
+
+" === gruvbox(カラーテーマ) ===
+colorscheme gruvbox
+set background=dark
+set t_Co=256
+let g:ligthline = { 'colorscteme': 'gruvbox' }
