@@ -8,10 +8,11 @@ $ ln -s ~/Codes/vimrc/vimrc ~/.vimrc
 
 などでシンボリックリンクをはっても、vimは`~/.vimrc`を認識してくれる。
 
+# dein.vim
 vimプラグインマネージャーはdein.vimを使用しているので、以下のREADMEどおりにインストールする。
 
 https://github.com/Shougo/dein.vim
 
 インストールしたあとは、vimコマンドのたびに、プラグインマネージャーがプラグインの追加や削除を遂行してくれる。
 
-LinuxとMacでホームディレクトリのパスを変更しているが、ユーザー名などの変更が必要。
+MacとLinuxはパスの指定ができているが、Windowsはできていない。
