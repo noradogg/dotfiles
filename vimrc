@@ -43,6 +43,7 @@ set belloff=all
 set scrolloff=5
 
 " 副産物のあれこれ
+" それぞれコメントのsetと同じ
 let s:vimdir_path=expand('$HOME/.vim/')
 " swpファイル出力先
 " set directory=~/.vim/tmp/swp
@@ -76,9 +77,14 @@ if !isdirectory(s:undodir_path)
     call mkdir(s:undodir_path, "p")
 endif
 
+
 """"""""""""""
 " キーマップ "
 """"""""""""""
+
+" === mapleader ===
+" <Leader>に<Space>を使用
+let g:mapleader = "\<Space>"
 
 " === Insert mode ===
 " jキーを二度押しでESCキー
@@ -100,8 +106,6 @@ vnoremap L $
 "文頭・文末
 nnoremap H ^
 nnoremap L $
-" <Leader>に<Space>を使用
-let g:mapleader = "\<Space>"
 
 " 行移動を表示行移動に
 nnoremap j gj
@@ -117,14 +121,12 @@ nnoremap # #zz
 nnoremap x "_x
 nnoremap s "_s
 
-" ファイル保存 <Leader>+"w"
+" ファイル保存 <Leader>+"s"
 " nnoremap <Leader>w :w<CR>
 nnoremap <Leader>s :w<CR>
 
-
 " ハイライトを消す(トグル) <Esc>*2
 nnoremap <Esc><Esc> :set<Space>hlsearch!<CR>
-
 
 
 """"""""""""""""""
@@ -174,6 +176,9 @@ call dein#add('morhetz/gruvbox')
 call dein#add('sainnhe/gruvbox-material') " Macではtrue colorに対応していないため使っていない
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
+" ゲーム
+call dein#add('rbtnn/vim-game_engine')
+call dein#add('rbtnn/vim-mario')  " 100行行事する必要あり
 
 " Required:
 call dein#end()
