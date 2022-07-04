@@ -161,6 +161,8 @@ endif
 call dein#add('vim-jp/vimdoc-ja')
 " ファイラ
 call dein#add('preservim/nerdtree') 
+" ターミナル
+call dein#add('lambdalisue/guise.vim')
 " 効率化
 call dein#add('easymotion/vim-easymotion')
 call dein#add('machakann/vim-sandwich')
@@ -178,7 +180,7 @@ call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 " ゲーム
 call dein#add('rbtnn/vim-game_engine')
-call dein#add('rbtnn/vim-mario')  " 100行行事する必要あり
+call dein#add('rbtnn/vim-mario')  " 100行表示する必要あり
 
 " Required:
 call dein#end()
