@@ -63,19 +63,26 @@ let s:viminfo_path=s:vimdir_path.'viminfo.txt'
 execute 'set viminfo+=n'.s:viminfo_path
 
 " もしディレクトリがなかったら作成する
-" TODO: 関数化したい
-if !isdirectory(s:swpdir_path)
-    call mkdir(s:swpdir_path, "p")
-endif
-if !isdirectory(s:backupdir_path)
-    call mkdir(s:backupdir_path, "p")
-endif
-if !isdirectory(s:undodir_path)
-    call mkdir(s:undodir_path, "p")
-endif
-if !isdirectory(s:undodir_path)
-    call mkdir(s:undodir_path, "p")
-endif
+function! My_mkdir(path) abort
+    if !isdirectory(a:path)
+        call mkdir(a:path, "p")
+        echo "My_mkdir() executed! (".a:path.") from .vimrc"
+    endif
+endfunction
+
+call My_mkdir(s:swpdir_path)
+call My_mkdir(s:backupdir_path)
+call My_mkdir(s:undodir_path)
+
+" if !isdirectory(s:swpdir_path)
+"     call mkdir(s:swpdir_path, "p")
+" endif
+" if !isdirectory(s:backupdir_path)
+"     call mkdir(s:backupdir_path, "p")
+" endif
+" if !isdirectory(s:undodir_path)
+"     call mkdir(s:undodir_path, "p")
+" endif
 
 
 """"""""""""""
