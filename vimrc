@@ -162,7 +162,7 @@ call dein#add('vim-jp/vimdoc-ja')
 " ファイラ
 call dein#add('preservim/nerdtree') 
 " ターミナル
-call dein#add('lambdalisue/guise.vim')
+call dein#add('voldikss/vim-floaterm')
 " 効率化
 call dein#add('easymotion/vim-easymotion')
 call dein#add('machakann/vim-sandwich')
@@ -196,8 +196,13 @@ endif
 
 
 " === nerdtree ===
-nnoremap <Leader>t :NERDTreeToggle<CR>
-nnoremap <Leader>T :NERDTree<CR>
+nnoremap <Leader>f :NERDTreeToggle<CR>
+nnoremap <Leader>F :NERDTree<CR>
+
+" === Floaterm ===
+nnoremap <Leader>t :FloatermToggle<CR>
+nnoremap <Leader>T :FloatermToggle<CR>
+
 
 " === vim-sandwich ===
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
