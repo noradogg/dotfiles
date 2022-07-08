@@ -74,16 +74,6 @@ call My_mkdir(s:swpdir_path)
 call My_mkdir(s:backupdir_path)
 call My_mkdir(s:undodir_path)
 
-" if !isdirectory(s:swpdir_path)
-"     call mkdir(s:swpdir_path, "p")
-" endif
-" if !isdirectory(s:backupdir_path)
-"     call mkdir(s:backupdir_path, "p")
-" endif
-" if !isdirectory(s:undodir_path)
-"     call mkdir(s:undodir_path, "p")
-" endif
-
 
 """"""""""""""
 " キーマップ "
@@ -170,6 +160,11 @@ call dein#add('vim-jp/vimdoc-ja')
 call dein#add('preservim/nerdtree') 
 " ターミナル
 call dein#add('voldikss/vim-floaterm')
+" 補完
+call dein#add('prabirshrestha/asyncomplete.vim')
+call dein#add('prabirshrestha/vim-lsp')
+call dein#add('mattn/vim-lsp-settings')
+call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 " 効率化
 call dein#add('easymotion/vim-easymotion')
 call dein#add('machakann/vim-sandwich')
@@ -210,6 +205,28 @@ nnoremap <Leader>F :NERDTree<CR>
 nnoremap <Leader>t :FloatermToggle<CR>
 nnoremap <Leader>T :FloatermToggle<CR>
 
+" === completion feature ===
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+command! Autopop call s:autopoptoggle()
+function! s:autopoptoggle()
+    if (g:asyncomplete_auto_popup)
+       let g:asyncomplete_auto_popup = 0
+   elseif (!g:asyncomplete_auto_popup)
+       let g:asyncomplete_auto_popup = 1
+   endif
+endfunction
 
 " === vim-sandwich ===
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
