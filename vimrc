@@ -2,6 +2,11 @@
 " set "
 """""""
 
+" 文字コード
+set encoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
+
 " 行番号を表示
 set number
 set numberwidth=5
@@ -84,6 +89,11 @@ call My_mkdir(s:undodir_path)
 let g:mapleader = "\<Space>"
 
 " === Insert mode ===
+" カーソル移動
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 " jキーを二度押しでESCキー
 inoremap <silent> jj <Esc><Right>
 inoremap <silent> っｊ <Esc><Right>
