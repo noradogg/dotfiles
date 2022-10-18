@@ -12,6 +12,7 @@ set number
 set numberwidth=5
 " カーソルライン
 set cursorline
+set cursorcolumn
 " タイトルをウィンドウ枠に表示
 set title
 " ステータスライン (下から2行目表示)
@@ -98,8 +99,8 @@ inoremap <C-l> <Right>
 inoremap <silent> jj <Esc><Right>
 inoremap <silent> っｊ <Esc><Right>
 " インサートモードで新しい行を追加し移動
-inoremap <silent> OO <Esc>O
-inoremap <silent> Oo <Esc>o
+inoremap <C-o><C-o> <Esc>O
+inoremap <C-o> <Esc>o
 
 
 " === Visual mode ===
