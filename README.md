@@ -3,7 +3,9 @@ vimrcファイルを`.vimrc`と名前をつけて、ホームディレクトリ�
 もしくは
 
 ```bash:bash
-$ ln -s ~/Codes/vimrc/vimrc ~/.vimrc
+$ # git clone
+$ cd vimrc
+$ ln -s ./vimrc ~/.vimrc
 ```
 
 などでシンボリックリンクをはっても、vimは`~/.vimrc`を認識してくれる。
