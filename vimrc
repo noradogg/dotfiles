@@ -48,6 +48,7 @@ set belloff=all
 " スクロール時に下までスクロールしすぎない(ztやzbを叩いた時)
 set scrolloff=5
 
+
 " 副産物のあれこれ
 " それぞれコメントのsetと同じ
 let s:vimdir_path=expand('$HOME/.vim/')
@@ -79,6 +80,12 @@ endfunction
 call My_mkdir(s:swpdir_path)
 call My_mkdir(s:backupdir_path)
 call My_mkdir(s:undodir_path)
+
+
+""""""""""""""
+" エイリアス "
+""""""""""""""
+command H Helptags
 
 
 """"""""""""""
@@ -136,6 +143,9 @@ nnoremap <Leader>s :w<CR>
 " ハイライトを消す(トグル) <Esc>*2
 nnoremap <Esc><Esc> :set<Space>hlsearch!<CR>
 
+" === Terminal mode ===
+" エスケープ
+tnoremap <Esc> <C-w><S-n>
 
 """"""""""""""""""
 " プラグイン管理 "
@@ -265,9 +275,9 @@ let g:win_ext_command_map = {
       \   'V': 'wincmd v',
       \   'S': 'wincmd s',
       \   'n': 'bnext',
-      \   'N': 'bnext!',
+      \   'N': 'tabnext',
       \   'p': 'bprevious',
-      \   'P': 'bprevious!',
+      \   'P': 'tabprevious',
       \   "\<c-n>": 'tabnext',
       \   "\<c-p>": 'tabprevious',
       \   '=': 'wincmd =',
