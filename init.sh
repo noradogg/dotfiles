@@ -17,5 +17,21 @@ function create_symbolic_link() {
     esac
 }
 
+function setup_dein_vim() {
+    echo -n "Do you want to setup dein.vim? [y/N]: "
+    read ANS
+    case $ANS in
+        [Yy]* )
+            # Setup dein
+            curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+            sh ./installer.sh ~/.cache/dein && rm installer.sh
+            ;;
+        * )
+            # Do nothing
+            ;;
+    esac
+}
+
 create_symbolic_link zshrc
 create_symbolic_link vimrc
+setup_dein_vim
