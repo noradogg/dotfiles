@@ -1,13 +1,14 @@
 #!/bin/bash
 
 function create_symbolic_link() {
+    dotfiles_path=`cd $(dirname ${0}) && pwd`
     echo -n "~/.$1 already exists. Do you want to replace it? [Y/n]: "
     read ANS
     case $ANS in
         "" | [Yy]* )
             # Replace
             unlink ~/.$1
-            ln -s ./$1 ~/.$1
+            ln -s $dotfiles_path/$1 ~/.$1
             echo "~/.$1 was replaced."
             ;;
         * )
@@ -31,6 +32,7 @@ function setup_dein_vim() {
             ;;
     esac
 }
+
 
 create_symbolic_link zshrc
 create_symbolic_link vimrc

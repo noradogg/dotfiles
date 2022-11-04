@@ -286,8 +286,8 @@ let g:win_ext_command_map = {
       \ }
 
 " === gruvbox(カラーテーマ) ===
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
 set t_Co=256
 let g:ligthline = { 'colorscheme': 'gruvbox' }
 
