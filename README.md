@@ -1,20 +1,10 @@
-# vimrc
-vimrcファイルを`.vimrc`と名前をつけて、ホームディレクトリに保存する。
-もしくは
-
-```bash:bash
-$ # git clone
-$ cd vimrc
-$ ln -s ./vimrc ~/.vimrc
+# Usage
+```
+$ git clone [this repository]
+$ cd dotfiles
+$ ./init.sh
 ```
 
-などでシンボリックリンクをはっても、vimは`~/.vimrc`を認識してくれる。
-
-# dein.vim
-vimプラグインマネージャーはdein.vimを使用しているので、以下のREADMEどおりにインストールする。
-
-https://github.com/Shougo/dein.vim
-
-インストールしたあとは、vimコマンドのたびに、プラグインマネージャーがプラグインの追加や削除を遂行してくれる。
-
+# Vim
+## memo
 MacとLinuxはパスの指定ができているが、Windowsはできていない。
