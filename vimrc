@@ -1,11 +1,11 @@
-   
+
 "   ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
 "   ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
 "   ██║   ██║██║██╔████╔██║██████╔╝██║     
 "   ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
 "    ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
 "     ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
-                                          
+
 
 """""""
 " set "
@@ -214,6 +214,7 @@ call dein#add('morhetz/gruvbox')
 call dein#add('sainnhe/gruvbox-material') " Macではtrue colorに対応していないため使っていない
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
+call dein#add('ryanoasis/vim-devicons')
 " ゲーム
 call dein#add('rbtnn/vim-game_engine')
 call dein#add('rbtnn/vim-mario')  " 100行表示する必要あり
@@ -234,6 +235,7 @@ endif
 " === nerdtree ===
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <Leader>F :NERDTree<CR>
+let g:webdevicons_enable_nerdtree = 1
 
 " === Floaterm ===
 nnoremap <Leader>t :FloatermToggle<CR>
@@ -323,4 +325,11 @@ let g:airline#extensions#tabline#buffer_idx_format = {
 	\ '8': '8 ',
 	\ '9': '9 '
 	\}
+let g:airline_powerline_fonts = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+
+" === devicons ===
+set guifont=:h
+set guifont=DroidSansMono_Nerd_Font:h11
 "End dein Scripts-------------------------
