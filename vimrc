@@ -1,3 +1,12 @@
+   
+"   ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+"   ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+"   ██║   ██║██║██╔████╔██║██████╔╝██║     
+"   ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
+"    ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"     ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+                                          
+
 """""""
 " set "
 """""""
@@ -188,6 +197,7 @@ call dein#add('mattn/vim-lsp-settings')
 call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 " 効率化
 call dein#add('easymotion/vim-easymotion')
+call dein#add('jacquesbh/vim-showmarks')
 call dein#add('machakann/vim-sandwich')
 call dein#add('cohama/lexima.vim')
 call dein#add('tpope/vim-commentary')
@@ -248,6 +258,9 @@ function! s:autopoptoggle()
        let g:asyncomplete_auto_popup = 1
    endif
 endfunction
+
+" === vim-showmarks ===
+nnoremap <C-m> :DoShowMarks<CR>
 
 " === vim-sandwich ===
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
