@@ -52,7 +52,7 @@ au QuickfixCmdPost make,grep,grepadd,vimgrep copen
 set clipboard+=unnamed
 
 " マウス有効化
-set mouse=a
+"set mouse=a
 
 " Beep音を消す
 set belloff=all
@@ -209,8 +209,6 @@ call dein#add('junegunn/fzf', { 'build': './install --all' })
 call dein#add('junegunn/fzf.vim')
 call dein#add('markonm/traces.vim')
 call dein#add('dstein64/vim-win')
-" Git
-call dein#add('tpope/vim-fugitive')
 " カラーテーマ
 call dein#add('morhetz/gruvbox')
 call dein#add('sainnhe/gruvbox-material') " Macではtrue colorに対応していないため使っていない
@@ -327,7 +325,7 @@ let g:airline#extensions#tabline#buffer_idx_format = {
 	\ '8': '8 ',
 	\ '9': '9 '
 	\}
-let g:airline#extensions#scrollbar#enabled = 1
+"let g:airline#extensions#scrollbar#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
