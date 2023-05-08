@@ -166,25 +166,25 @@ tnoremap <Esc> <C-w><S-n>
 filetype plugin on
 
 "dein Scripts-----------------------------
-if &compatible
-    set nocompatible               " Be iMproved
-endif
 
-" Required:
-if has('linux') || has('mac')
-    set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
-endif
+" Ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
-" Required:
-if has('linux') || has('mac')
-    call dein#begin('$HOME/.cache/dein')
-endif
+" Set Dein base path (required)
+let s:dein_base = $HOME . '/.cache/dein'
 
-" Let dein manage dein
-" Required:
-if has('linux') || has('mac')
-    call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
-endif
+" Set Dein source path (required)
+let s:dein_src = $HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+" Set Dein runtime path (required)
+execute 'set runtimepath+=' . s:dein_src
+
+" Call Dein initialization (required)
+call dein#begin(s:dein_base)
+
+call dein#add(s:dein_src)
+
 
 " Add or remove your plugins here like this:
 " ドキュメントの日本語化
