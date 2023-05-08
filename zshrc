@@ -87,6 +87,13 @@ alias q='exit'
 alias sed='gsed'
 alias dir='tree -L 1'
 
+case ${OSTYPE} in
+    linux-gnu )
+        alias pbcopy='xsel --clipboard --input'
+        alias pbpaste='xsel --clipboard --output'
+        ;;
+esac
+
 # alias mkdircd='(){mkdir $1 -p; cd $1}'
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
