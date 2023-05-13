@@ -117,9 +117,11 @@ echo " ╚══╝╚══╝ ╚══════╝╚══════╝
 echo ""
 
 ## neofetch ##
-if [ -f /opt/homebrew/bin/neofetch ]; then
-    /opt/homebrew/bin/neofetch
+if type neofetch > /dev/null 2>&1; then
+    neofetch
+else
+    echo "Plese install neofetch."
+    echo ""
 fi
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
