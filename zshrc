@@ -24,6 +24,9 @@ PROMPT="%B%F{244}[%m]%f:%F{027}%c%f %# %b"
 RPROMPT=""
 # <<< prompt custom <<<
 
+# >>> export
+export SUDO_EDITOR=vim
+# <<< export
 
 # >>> aliases
 # Aliases only MacOS
