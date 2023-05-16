@@ -3,9 +3,9 @@ My dot files.
 
 ## Usage
 ```
-$ git clone [this repository]
-$ cd dotfiles
-$ ./init.sh
+git clone git@github.com:noradogg/dotfiles.git
+cd dotfiles
+./init.bash
 ```
 
 ## Vim
