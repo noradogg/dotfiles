@@ -33,6 +33,6 @@ function setup_dein_vim() {
 }
 
 
+setup_dein_vim
 create_symbolic_link zshrc
 create_symbolic_link vimrc
-setup_dein_vim
