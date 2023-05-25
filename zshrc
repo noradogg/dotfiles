@@ -83,7 +83,7 @@ alias dupd='docker-compose up -d'
 alias dexec='(){docker-compose exec $1 bash}'
 alias ddown='docker-compose down'
 
-alias dotfiles='cd ~/GitHub/dotfiles/'
+alias dotfiles='cd ~/github/dotfiles/'
 
 alias q='exit'
 
