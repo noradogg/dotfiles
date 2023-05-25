@@ -87,7 +87,7 @@ alias dotfiles='cd ~/github/dotfiles/'
 
 alias q='exit'
 
-alias sed='gsed'
+# alias sed='gsed'
 alias dir='tree -L 1'
 
 case ${OSTYPE} in
