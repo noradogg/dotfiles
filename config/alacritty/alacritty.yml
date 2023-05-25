@@ -1,0 +1,10 @@
+font:
+  normal:
+    family: FiraCodeNerdFontMono
+    style: Regular
+  bold:
+    family: FiraCodeNerdFontMono
+    style: Bold
+  italic:
+    family: FiraCodeNerdFontMono
+
