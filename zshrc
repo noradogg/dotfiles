@@ -26,6 +26,7 @@ RPROMPT=""
 
 # >>> export
 export SUDO_EDITOR=vim
+export LANG=C
 # <<< export
 
 # >>> aliases
