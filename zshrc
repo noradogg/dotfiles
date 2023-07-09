@@ -101,6 +101,8 @@ esac
 # alias mkdircd='(){mkdir $1 -p; cd $1}'
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
+alias discord='discord > /dev/null 2>&1 &'
+
 # <<< alias
 
 
